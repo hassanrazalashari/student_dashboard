@@ -158,20 +158,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Course card click functionality
-    document.querySelectorAll('.course-card').forEach(card => {
-        card.addEventListener('click', function() {
-            // In a real app, this would navigate to the course page
-            alert('Navigating to course details page');
-        });
-    });
+    // document.querySelectorAll('.course-card').forEach(card => {
+    //     card.addEventListener('click', function() {
+    //         // In a real app, this would navigate to the course page
+    //         alert('Navigating to course details page');
+    //     });
+    // });
     
     // Task action button functionality
-    document.querySelectorAll('.task-action').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const taskItem = this.closest('.task-item');
-            const taskName = taskItem.querySelector('h4').textContent;
-            alert(`Starting task: ${taskName}`);
-        });
-    });
+    // document.querySelectorAll('.task-action').forEach(btn => {
+    //     btn.addEventListener('click', function(e) {
+    //         e.stopPropagation();
+    //         const taskItem = this.closest('.task-item');
+    //         const taskName = taskItem.querySelector('h4').textContent;
+    //         alert(`Starting task: ${taskName}`);
+    //     });
+    // });
 });
