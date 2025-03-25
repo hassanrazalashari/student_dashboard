@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTrack - Student Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="profile-section">
+                    <div class="profile-photo-container">
+                        <img id="profile-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" alt="Profile Photo">
+                        <input type="file" id="photo-upload" accept="image/*" style="display: none;">
+                        <button id="upload-btn" class="upload-btn"><i class="fas fa-camera"></i></button>
+                    </div>
+                    <h3 id="student-name">Muhsin Raza</h3>
+                    <p id="student-email">muhsinraza2234@gmail.com</p>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> My Courses</a></li>
+                    <li><a href="#"><i class="fas fa-calendar-alt"></i> Schedule</a></li>
+                    <li><a href="#"><i class="fas fa-chart-line"></i> Progress</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="theme-switcher">
+                <span>Theme:</span>
+                <button id="theme-toggle" class="theme-toggle-btn">
+                    <i class="fas fa-moon"></i> Dark Mode
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Student Dashboard</h1>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="notification-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">3</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <!-- Welcome Banner -->
+                <section class="welcome-banner">
+                    <div class="welcome-text">
+                        <h2>Welcome back, Muhsin!</h2>
+                        <p>You have 3 active courses. Keep up the good work!</p>
+                    </div>
+                    <div class="overall-progress">
+                        <div class="progress-circle" data-progress="75">
+                            <svg class="progress-ring" width="120" height="120">
+                                <circle class="progress-ring-circle" stroke-width="10" fill="transparent" r="50" cx="60" cy="60"/>
+                            </svg>
+                            <div class="progress-text">75%</div>
+                        </div>
+                        <p>Overall Completion</p>
+                    </div>
+                </section>
+
+                <!-- Enrolled Courses Section -->
+                <section class="courses-section">
+                    <div class="section-header">
+                        <h3>Your Courses</h3>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="courses-grid">
+                        <div class="course-card">
+                            <div class="course-image" style="background-image: url('https://learnonline.pk/wp-content/uploads/2024/02/Flutter-Course-by-asif-taj.png')"></div>
+                            <div class="course-info">
+                                <h4>Introduction to Flutter Development</h4>
+                                <p class="instructor">By Asif Taj</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 65%"></div>
+                                    <span>65% complete</span>
+                                </div>
+                                <div class="course-stats">
+                                    <span><i class="fas fa-book-open"></i> 12/20 lessons</span>
+                                    <span><i class="fas fa-check-circle"></i> 3 quizzes</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-card">
+                            <div class="course-image" style="background-image: url('https://www.digitalotters.com/wp-content/uploads/2024/06/Node.js-Logo.webp')"></div>
+                            <div class="course-info">
+                                <h4>Node.js Fundamentals</h4>
+                                <p class="instructor">By Ibtasam Hussain</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 40%"></div>
+                                    <span>40% complete</span>
+                                </div>
+                                <div class="course-stats">
+                                    <span><i class="fas fa-book-open"></i> 8/20 lessons</span>
+                                    <span><i class="fas fa-check-circle"></i> 1 quiz</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-card">
+                            <div class="course-image" style="background-image: url('https://miro.medium.com/v2/resize:fit:1100/format:webp/1*1xzUd1enzX3l-S4S26iKxA.png')"></div>
+                            <div class="course-info">
+                                <h4>Mobile App UI/UX</h4>
+                                <p class="instructor">By Ammar Khan</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 90%"></div>
+                                    <span>90% complete</span>
+                                </div>
+                                <div class="course-stats">
+                                    <span><i class="fas fa-book-open"></i> 18/20 lessons</span>
+                                    <span><i class="fas fa-check-circle"></i> 5 quizzes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Upcoming Tasks Section -->
+                <section class="tasks-section">
+                    <div class="section-header">
+                        <h3>Upcoming Tasks</h3>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="tasks-list">
+                        <div class="task-item">
+                            <div class="task-priority high"></div>
+                            <div class="task-details">
+                                <h4>Web Development - Assignment 3</h4>
+                                <p>Due tomorrow at 11:59 PM</p>
+                            </div>
+                            <button class="task-action">Start</button>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-priority medium"></div>
+                            <div class="task-details">
+                                <h4>Data Science - Quiz 2</h4>
+                                <p>Due in 3 days</p>
+                            </div>
+                            <button class="task-action">Prepare</button>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-priority low"></div>
+                            <div class="task-details">
+                                <h4>Mobile Design - Final Project</h4>
+                                <p>Due in 2 weeks</p>
+                            </div>
+                            <button class="task-action">Plan</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Study Reminders Section -->
+                <section class="reminders-section">
+                    <div class="section-header">
+                        <h3>Study Reminders</h3>
+                        <button id="add-reminder" class="add-btn"><i class="fas fa-plus"></i> Add Reminder</button>
+                    </div>
+                    <div class="reminders-list">
+                        <div class="reminder-item">
+                            <i class="fas fa-bell reminder-icon"></i>
+                            <div class="reminder-details">
+                                <h4>Web Development Practice</h4>
+                                <p>Daily at 7:00 PM</p>
+                            </div>
+                            <div class="reminder-actions">
+                                <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                                <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <div class="reminder-item">
+                            <i class="fas fa-bell reminder-icon"></i>
+                            <div class="reminder-details">
+                                <h4>Data Science Reading</h4>
+                                <p>Weekdays at 8:00 AM</p>
+                            </div>
+                            <div class="reminder-actions">
+                                <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                                <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Reminder Modal -->
+    <div id="reminder-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Add New Reminder</h3>
+            <form id="reminder-form">
+                <div class="form-group">
+                    <label for="reminder-title">Title</label>
+                    <input type="text" id="reminder-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="reminder-time">Time</label>
+                    <input type="time" id="reminder-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="reminder-days">Repeat</label>
+                    <select id="reminder-days">
+                        <option value="once">Once</option>
+                        <option value="daily">Daily</option>
+                        <option value="weekdays">Weekdays</option>
+                        <option value="weekly">Weekly</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Save Reminder</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
