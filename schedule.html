@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTrack - Schedule</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="profile-section">
+                    <div class="profile-photo-container">
+                        <img id="profile-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" alt="Profile Photo">
+                        <input type="file" id="photo-upload" accept="image/*" style="display: none;">
+                        <button id="upload-btn" class="upload-btn"><i class="fas fa-camera"></i></button>
+                    </div>
+                    <h3 id="student-name">Muhsin Raza</h3>
+                    <p id="student-email">muhsinraza2234@gmail.com</p>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="courses.html"><i class="fas fa-book"></i> My Courses</a></li>
+                    <li class="active"><a href="schedule.html"><i class="fas fa-calendar-alt"></i> Schedule</a></li>
+                    <li><a href="progress.html"><i class="fas fa-chart-line"></i> Progress</a></li>
+                </ul>
+            </nav>
+            <div class="theme-switcher">
+                <span>Theme:</span>
+                <button id="theme-toggle" class="theme-toggle-btn">
+                    <i class="fas fa-moon"></i> Dark Mode
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>My Schedule</h1>
+                <!-- <div class="header-actions">
+                    <div class="date-navigator">
+                        <button class="nav-btn"><i class="fas fa-chevron-left"></i></button>
+                        <span class="current-week">October 23 - 29, 2023</span>
+                        <button class="nav-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <button class="btn-primary"><i class="fas fa-plus"></i> Add Event</button>
+                </div> -->
+            </header>
+
+            <div class="dashboard-content">
+                <section class="weekly-schedule">
+                    <div class="week-days">
+                        <div class="day-header">
+                            <div class="day-name">Sunday</div>
+                            <div class="day-date">23</div>
+                        </div>
+                        <div class="day-header">
+                            <div class="day-name">Monday</div>
+                            <div class="day-date">24</div>
+                        </div>
+                        <div class="day-header">
+                            <div class="day-name">Tuesday</div>
+                            <div class="day-date">25</div>
+                        </div>
+                        <div class="day-header">
+                            <div class="day-name">Wednesday</div>
+                            <div class="day-date">26</div>
+                        </div>
+                        <div class="day-header">
+                            <div class="day-name">Thursday</div>
+                            <div class="day-date">27</div>
+                        </div>
+                        <div class="day-header">
+                            <div class="day-name">Friday</div>
+                            <div class="day-date">28</div>
+                        </div>
+                        <div class="day-header">
+                            <div class="day-name">Saturday</div>
+                            <div class="day-date">29</div>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-grid">
+                        <!-- Sunday -->
+                        <div class="day-events">
+                            <div class="event-item lecture">
+                                <span class="event-time">09:00 - 11:00</span>
+                                <h4>Flutter Development</h4>
+                                <p>Lecture: State Management</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Monday -->
+                        <div class="day-events">
+                            <div class="event-item assignment">
+                                <span class="event-time">14:00 - 15:30</span>
+                                <h4>Node.js Assignment</h4>
+                                <p>Due: REST API Project</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Tuesday -->
+                        <div class="day-events">
+                            <div class="event-item lecture">
+                                <span class="event-time">10:00 - 12:00</span>
+                                <h4>UI/UX Design</h4>
+                                <p>Workshop: Figma Basics</p>
+                            </div>
+                            <div class="event-item quiz">
+                                <span class="event-time">16:00 - 17:00</span>
+                                <h4>Flutter Quiz</h4>
+                                <p>Chapter 5-6</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Wednesday -->
+                        <div class="day-events">
+                            <div class="event-item lecture">
+                                <span class="event-time">11:00 - 13:00</span>
+                                <h4>Node.js Fundamentals</h4>
+                                <p>Authentication Systems</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Thursday -->
+                        <div class="day-events">
+                            <div class="event-item meeting">
+                                <span class="event-time">15:00 - 16:00</span>
+                                <h4>Study Group</h4>
+                                <p>Library Room 3</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Friday -->
+                        <div class="day-events">
+                            <!-- No events -->
+                        </div>
+                        
+                        <!-- Saturday -->
+                        <div class="day-events">
+                            <div class="event-item personal">
+                                <span class="event-time">All Day</span>
+                                <h4>Study Day</h4>
+                                <p>Review all materials</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    
+</body>
+</html>

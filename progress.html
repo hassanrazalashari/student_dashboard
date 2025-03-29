@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTrack - Progress</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="profile-section">
+                    <div class="profile-photo-container">
+                        <img id="profile-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" alt="Profile Photo">
+                        <input type="file" id="photo-upload" accept="image/*" style="display: none;">
+                        <button id="upload-btn" class="upload-btn"><i class="fas fa-camera"></i></button>
+                    </div>
+                    <h3 id="student-name">Muhsin Raza</h3>
+                    <p id="student-email">muhsinraza2234@gmail.com</p>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="courses.html"><i class="fas fa-book"></i> My Courses</a></li>
+                    <li><a href="schedule.html"><i class="fas fa-calendar-alt"></i> Schedule</a></li>
+                    <li class="active"><a href="progress.html"><i class="fas fa-chart-line"></i> Progress</a></li>
+                </ul>
+            </nav>
+            <div class="theme-switcher">
+                <span>Theme:</span>
+                <button id="theme-toggle" class="theme-toggle-btn">
+                    <i class="fas fa-moon"></i> Dark Mode
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>My Progress</h1>
+            </header>
+
+            <div class="dashboard-content">
+                <section class="progress-overview">
+                    <div class="overview-cards">
+                        <div class="overview-card">
+                            <div class="overview-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <div class="overview-info">
+                                <h3>Courses Taken</h3>
+                                <p class="big-number">7</p>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="overview-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="overview-info">
+                                <h3>Courses Completed</h3>
+                                <p class="big-number">3</p>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="overview-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="overview-info">
+                                <h3>Hours Spent</h3>
+                                <p class="big-number">142</p>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="overview-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="overview-info">
+                                <h3>Average Score</h3>
+                                <p class="big-number">87%</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="progress-charts">
+                    <div class="chart-card">
+                        <div class="chart-image" style="background-image: url('./images/bg1.png')">
+                            <div class="chart-overlay">
+                                <h3>Course Completion</h3>
+                            </div>
+                        </div>
+                        <div class="chart-info">
+                            <p>Track your progress across all enrolled courses</p>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-card">
+                        <div class="chart-image" style="background-image: url('./images/bg2.jpg')">
+                            <div class="chart-overlay">
+                                <h3>Study Hours Trend</h3>
+                            </div>
+                        </div>
+                        <div class="chart-info">
+                            <p>View your weekly study patterns and consistency</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="badges-section">
+                    <h3>Your Achievements</h3>
+                    <div class="badges-grid">
+                        <div class="badge-item">
+                            <div class="badge-icon gold">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <h4>Fast Learner</h4>
+                            <p>Completed 3 courses in one month</p>
+                        </div>
+                        <div class="badge-item">
+                            <div class="badge-icon silver">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>Quiz Master</h4>
+                            <p>Scored 100% on 5 quizzes</p>
+                        </div>
+                        <div class="badge-item">
+                            <div class="badge-icon bronze">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <h4>Streak Keeper</h4>
+                            <p>Studied for 14 days straight</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTrack - Settings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <!-- Same sidebar as index.html -->
+            <!-- ... -->
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="courses.html"><i class="fas fa-book"></i> My Courses</a></li>
+                    <li><a href="schedule.html"><i class="fas fa-calendar-alt"></i> Schedule</a></li>
+                    <li><a href="progress.html"><i class="fas fa-chart-line"></i> Progress</a></li>
+                    <li class="active"><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            <!-- ... -->
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Settings</h1>
+            </header>
+
+            <div class="dashboard-content">
+                <section class="settings-section">
+                    <div class="settings-tabs">
+                        <button class="tab-btn active" data-tab="profile">Profile</button>
+                        <button class="tab-btn" data-tab="account">Account</button>
+                        <button class="tab-btn" data-tab="notifications">Notifications</button>
+                        <button class="tab-btn" data-tab="privacy">Privacy</button>
+                    </div>
+
+                    <div class="tab-content active" id="profile-tab">
+                        <h3>Profile Information</h3>
+                        <form class="settings-form">
+                            <div class="form-group">
+                                <label for="profile-name">Full Name</label>
+                                <input type="text" id="profile-name" value="Muhsin Raza">
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-email">Email</label>
+                                <input type="email" id="profile-email" value="muhsinraza2234@gmail.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-bio">Bio</label>
+                                <textarea id="profile-bio" rows="3">Computer Science student passionate about mobile development and UI/UX design.</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Profile Photo</label>
+                                <div class="profile-photo-upload">
+                                    <img id="settings-profile-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" alt="Profile Photo">
+                                    <div class="upload-actions">
+                                        <button type="button" class="btn-outline">Change Photo</button>
+                                        <button type="button" class="btn-text">Remove</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+
+                    <div class="tab-content" id="account-tab">
+                        <h3>Account Settings</h3>
+                        <form class="settings-form">
+                            <div class="form-group">
+                                <label for="current-password">Current Password</label>
+                                <input type="password" id="current-password">
+                            </div>
+                            <div class="form-group">
+                                <label for="new-password">New Password</label>
+                                <input type="password" id="new-password">
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-password">Confirm New Password</label>
+                                <input type="password" id="confirm-password">
+                            </div>
+                            <button type="submit" class="btn-primary">Update Password</button>
+                        </form>
+                        
+                        <div class="danger-zone">
+                            <h4>Danger Zone</h4>
+                            <div class="danger-actions">
+                                <button class="btn-danger">Deactivate Account</button>
+                                <button class="btn-danger">Delete Account</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="notifications-tab">
+                        <h3>Notification Preferences</h3>
+                        <form class="settings-form">
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="email-notifications" checked>
+                                <label for="email-notifications">Email Notifications</label>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="push-notifications" checked>
+                                <label for="push-notifications">Push Notifications</label>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="assignment-reminders" checked>
+                                <label for="assignment-reminders">Assignment Reminders</label>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="course-updates">
+                                <label for="course-updates">Course Updates</label>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="promotional-emails">
+                                <label for="promotional-emails">Promotional Emails</label>
+                            </div>
+                            <button type="submit" class="btn-primary">Save Preferences</button>
+                        </form>
+                    </div>
+
+                    <div class="tab-content" id="privacy-tab">
+                        <h3>Privacy Settings</h3>
+                        <form class="settings-form">
+                            <div class="form-group">
+                                <label for="profile-visibility">Profile Visibility</label>
+                                <select id="profile-visibility">
+                                    <option value="public">Public</option>
+                                    <option value="connections" selected>Only to Connections</option>
+                                    <option value="private">Private</option>
+                                </select>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="show-achievements" checked>
+                                <label for="show-achievements">Show Achievements on Profile</label>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="show-courses" checked>
+                                <label for="show-courses">Show Enrolled Courses</label>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="search-engine-index">
+                                <label for="search-engine-index">Allow search engines to index my profile</label>
+                            </div>
+                            <button type="submit" class="btn-primary">Save Privacy Settings</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
