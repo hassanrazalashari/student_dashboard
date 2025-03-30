@@ -1527,3 +1527,128 @@ body {
 [data-theme="dark"] .close-modal:hover {
     color: #fff;
 }
+
+/* Schedule Page Responsive Styles */
+.weekly-schedule {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 20px;
+}
+
+.week-days {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(120px, 1fr));
+    min-width: 700px; /* Minimum width before scrolling kicks in */
+}
+
+.day-header {
+    padding: 10px;
+    text-align: center;
+    background-color: var(--sidebar-bg);
+    color: var(--text-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.day-name {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.day-date {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(120px, 1fr));
+    min-width: 700px;
+    grid-gap: 10px;
+}
+
+.day-events {
+    min-height: 150px;
+    padding: 5px;
+    background-color: var(--card-bg);
+    border-radius: 5px;
+}
+
+.event-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+}
+
+.event-time {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 5px;
+    opacity: 0.9;
+}
+
+.event-item h4 {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.event-item p {
+    margin: 0;
+    font-size: 12px;
+}
+
+/* Event type colors */
+.event-item.lecture { background-color: #4e73df; }
+.event-item.assignment { background-color: #1cc88a; }
+.event-item.quiz { background-color: #f6c23e; color: #333; }
+.event-item.meeting { background-color: #36b9cc; }
+.event-item.personal { background-color: #858796; }
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .weekly-schedule {
+        margin-left: -15px;
+        margin-right: -15px;
+        width: calc(100% + 30px);
+    }
+    
+    .day-header, .day-events {
+        min-width: 100px;
+    }
+    
+    .event-item {
+        padding: 8px;
+    }
+    
+    .event-item h4 {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .day-header, .day-events {
+        min-width: 80px;
+    }
+    
+    .day-name {
+        font-size: 12px;
+    }
+    
+    .day-date {
+        font-size: 16px;
+    }
+    
+    .event-item {
+        padding: 6px;
+        font-size: 12px;
+    }
+    
+    .event-item h4 {
+        font-size: 12px;
+    }
+    
+    .event-time {
+        font-size: 11px;
+    }
+}

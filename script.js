@@ -547,3 +547,50 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeProfilePage();
     // ... rest of your existing code
 });
+
+
+function initializeSchedulePage() {
+    if (document.querySelector('.weekly-schedule')) {
+        // Make schedule items clickable on mobile
+        if (window.innerWidth < 768) {
+            document.querySelectorAll('.event-item').forEach(item => {
+                item.style.cursor = 'pointer';
+                item.addEventListener('click', function() {
+                    this.classList.toggle('expanded');
+                });
+            });
+        }
+        
+        // Add swipe functionality for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        const scheduleContainer = document.querySelector('.weekly-schedule');
+        
+        scheduleContainer.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+        
+        scheduleContainer.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
+        
+        function handleSwipe() {
+            if (touchEndX < touchStartX) {
+                // Swipe left - scroll right
+                scheduleContainer.scrollLeft += 100;
+            }
+            if (touchEndX > touchStartX) {
+                // Swipe right - scroll left
+                scheduleContainer.scrollLeft -= 100;
+            }
+        }
+    }
+}
+
+// Add this to your DOMContentLoaded event
+document.addEventListener('DOMContentLoaded', function() {
+    initializeSchedulePage();
+    // ... your other initializations
+});
