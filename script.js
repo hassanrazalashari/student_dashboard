@@ -408,3 +408,142 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeProgressPage();
     initializeSchedulePage();
 });
+
+
+
+// For Notifications Page
+function initializeNotificationsPage() {
+    if (document.querySelector('.notifications-list')) {
+        // Mark all as read functionality
+        const markAllReadBtn = document.getElementById('mark-all-read');
+        if (markAllReadBtn) {
+            markAllReadBtn.addEventListener('click', function() {
+                document.querySelectorAll('.notification-item.unread').forEach(item => {
+                    item.classList.remove('unread');
+                });
+                // In a real app, you would also update the server
+            });
+        }
+
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                // In a real app, you would filter the notifications here
+            });
+        });
+
+        // Notification action menu functionality
+        // document.querySelectorAll('.notification-action').forEach(btn => {
+        //     btn.addEventListener('click', function(e) {
+        //         e.stopPropagation();
+        //         // In a real app, this would open an action menu
+        //         alert('Notification actions would appear here');
+        //     });
+        // });
+
+        // Notification click functionality
+        document.querySelectorAll('.notification-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.remove('unread');
+                // In a real app, this would navigate to the relevant content
+            });
+        });
+    }
+}
+
+// Update the DOMContentLoaded event listener to include notifications
+document.addEventListener('DOMContentLoaded', function() {
+    initializeProgressPage();
+    initializeSchedulePage();
+    initializeNotificationsPage();
+    
+    // Your existing theme toggle and other functionality...
+});
+
+
+// Profile Page Functionality
+function initializeProfilePage() {
+    if (document.querySelector('.profile-sections')) {
+        // Edit Profile Modal
+        const editProfileBtn = document.getElementById('edit-profile-btn');
+        const editProfileModal = document.getElementById('edit-profile-modal');
+        const closeModal = document.querySelector('.close-modal');
+        const cancelEdit = document.getElementById('cancel-edit');
+        const profileForm = document.getElementById('profile-form');
+
+        // Load profile data from localStorage or use default
+        const profileData = JSON.parse(localStorage.getItem('profileData')) || {
+            fullname: "Muhsin Raza",
+            email: "muhsinraza2234@gmail.com",
+            phone: "+1 (123) 456-7890",
+            location: "New York, USA",
+            bio: "Passionate computer science student specializing in mobile app development with Flutter. Enthusiastic about creating intuitive user experiences and solving real-world problems through technology."
+        };
+
+        // Display profile data
+        document.getElementById('profile-fullname').textContent = profileData.fullname;
+        document.getElementById('profile-email').textContent = profileData.email;
+        document.getElementById('profile-phone').textContent = profileData.phone;
+        document.getElementById('profile-location').textContent = profileData.location;
+        document.getElementById('profile-bio').textContent = profileData.bio;
+
+        // Set form values
+        document.getElementById('edit-fullname').value = profileData.fullname;
+        document.getElementById('edit-email').value = profileData.email;
+        document.getElementById('edit-phone').value = profileData.phone;
+        document.getElementById('edit-location').value = profileData.location;
+        document.getElementById('edit-bio').value = profileData.bio;
+
+        // Open modal
+        editProfileBtn.addEventListener('click', function() {
+            editProfileModal.style.display = 'flex';
+        });
+
+        // Close modal
+        function closeProfileModal() {
+            editProfileModal.style.display = 'none';
+        }
+
+        closeModal.addEventListener('click', closeProfileModal);
+        cancelEdit.addEventListener('click', closeProfileModal);
+
+        // Save profile data
+        profileForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form values
+            const updatedProfile = {
+                fullname: document.getElementById('edit-fullname').value,
+                email: document.getElementById('edit-email').value,
+                phone: document.getElementById('edit-phone').value,
+                location: document.getElementById('edit-location').value,
+                bio: document.getElementById('edit-bio').value
+            };
+
+            // Save to localStorage
+            localStorage.setItem('profileData', JSON.stringify(updatedProfile));
+
+            // Update displayed values
+            document.getElementById('profile-fullname').textContent = updatedProfile.fullname;
+            document.getElementById('profile-email').textContent = updatedProfile.email;
+            document.getElementById('profile-phone').textContent = updatedProfile.phone;
+            document.getElementById('profile-location').textContent = updatedProfile.location;
+            document.getElementById('profile-bio').textContent = updatedProfile.bio;
+
+            // Close modal
+            closeProfileModal();
+        });
+    }
+}
+
+// Update the DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', function() {
+    initializeProgressPage();
+    initializeSchedulePage();
+    initializeNotificationsPage();
+    initializeNotificationBell();
+    initializeProfilePage();
+    // ... rest of your existing code
+});
